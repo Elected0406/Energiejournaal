@@ -1,42 +1,42 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    ы<meta name="description" content="Fucking Page" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <div class="container">
+            <a href="main.asp" class="row">
+                <img class="col-sm-12 col-md-4 logo" src="~/Content/img/ej.png" alt="Energy Journal logo">
+                <div clas="col-sm-12 col-md-8"></div>
+            </a>
+        <div class="row"><div class="row col-md-12 ftd"> 
+    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("PRIJZEN", "Index", "Home")</p>
+    <p class="col-sm-3 col-md-2 ht fb">@Html.ActionLink("DE REDACTIE", "Index", "Home")</p>
+    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("ABONNEMENT", "Index", "Home")</p>
+    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("CHARTS", "Index", "Home")</p>
+    @*@Html.Partial("_LoginPartial")*@
+</div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    <hr style="width:100%;height:2px;background-color:#93B359;margin:0;">
+    @RenderBody()
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-sm-6"><p><span class="footer-logo"><img src="~/Content/img/footer-loog.png" alt="Energy News"></span></p></div>
+                </div>
+                <div class="row">
+                    <p> <a href="#">Disclaimer</a> | <a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
