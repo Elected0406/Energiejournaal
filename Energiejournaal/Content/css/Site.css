@@ -1,0 +1,154 @@
+﻿.logo {
+    height: 100%;
+    padding: 10px 15px 15px 15px;
+}
+body {
+    font: 600 13px/23px "Open Sans", Arial, Helvetica, sans-serif;
+    font-size:16px;
+    color: #1896c0;
+    background-color: #fff;
+}
+.container {
+    padding: 0px;
+}
+.ht {
+    text-align: center;
+}
+.ht a:hover {
+        color: #93B359;
+        text-decoration: none;
+}
+.fb {
+    padding: 0px;
+}
+.ftd {
+    padding-right: 15px;
+    padding-left: 25px;
+}
+.form-group {
+    margin-bottom: 0;
+}
+.text-right {
+    padding:10px;
+    text-align: right !important;
+    color:#404040;
+    font-size:13px;
+}
+.time-btns {
+    display: inline-block;
+    font: 600 13px/23px "Open Sans", Arial, Helvetica, sans-serif;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    background-color: #bfbfbf;
+    text-transform: uppercase;
+    -webkit-transition: color 0.3s ease 0s;
+    text-decoration: none;
+    border:3px solid #fff;
+    color: #fff;
+    text-decoration: none;  
+}
+.time-btns:hover {
+       color: #88AA00;
+       text-decoration: none;
+       background-color: #666;
+}
+.footer {
+    background: #005372;
+    padding: 30px 0;
+    position: absolute;
+    bottom: auto;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+    text-decoration: none;
+}
+.copyright a {
+        color: #fff;
+        font-size:14px;
+}
+.copyright a:hover {
+    color: #88AA00;
+    text-decoration: none;
+}
+.copyright {
+    border-top: 1px solid #93B359;
+    padding-top: 25px;
+    margin-top: 25px;
+}
+.calender-wrap {
+
+}
+.input-group.date .input-group-addon {
+    cursor: pointer;
+    border: 2px solid #999;
+}
+.calender-wrap .form-control {
+    border-radius: 5px 0 0 5px;
+    color: #404040;
+    padding: 6px;
+    width: 100px;
+}
+.input-group-addon:hover {
+       color: #88AA00;
+       text-decoration: none;
+       background-color: #666;
+}
+.row-min {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.select-wrp {
+    padding: 30px 0 20px;
+    min-height: 250px;
+}
+.btn-primary {
+    background-color: #88aa00;
+    color: #fff;
+}
+.btn-secondary {
+    background-color: #1a85be;
+    color: #fff;
+}
+.btn-sm {
+    padding: 5px 15px;
+}
+.btn {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 35px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font: 600 14px/24px "Open Sans", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0;
+}
+.form-control:focus {
+    color: #464a4c;
+    background-color: #C6E2EE;
+    border-color: #464a4c;
+    outline: none;
+    border-radius: 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+.option:hover {
+    color: #464a4c;
+    background-color: #C6E2EE;
+    border-color: #464a4c;
+}
+.ergonomy-power-wrapper *, .ergonomy-power-wrapper > :after, .ergonomy-power-wrapper > :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}

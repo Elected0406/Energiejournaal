@@ -21,11 +21,18 @@ namespace Energiejournaal
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/daterangepicker.js",
+                      "~/Scripts/bootstrap-datetimepicker.min.js",
+                      "~/Scripts/daterangepicker.js",
+                      "~/Scripts/moment.min.js",
+                      "~/Scripts/SimpleTabs.js",
+                      "~/Scripts/simple-tabs.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap.css",
+                      "~/Content/css/font-awesome.css",                      
+                      "~/Content/css/site.css"));
         }
     }
 }
