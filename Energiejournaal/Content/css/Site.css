@@ -18,8 +18,11 @@ body {
         color: #93B359;
         text-decoration: none;
 }
-.fb {
+.fp {
     padding: 0px;
+}
+.fb {
+    border-radius: 0.25rem;
 }
 .ftd {
     padding-right: 15px;
@@ -75,12 +78,9 @@ body {
     padding-top: 25px;
     margin-top: 25px;
 }
-.calender-wrap {
-
-}
 .input-group.date .input-group-addon {
     cursor: pointer;
-    border: 2px solid #999;
+    border: 1px solid #DDDDDD;
 }
 .calender-wrap .form-control {
     border-radius: 5px 0 0 5px;
@@ -151,4 +151,13 @@ div {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+}
+.bootstrap-datetimepicker-widget {
+  top: 0;
+  left: 0;
+  width: 250px;
+  padding: 4px;
+  margin-top: 1px;
+  z-index: 99999 !important;
+  border-radius: 4px;
 }

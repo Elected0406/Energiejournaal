@@ -16,7 +16,7 @@
             </a>
         <div class="row"><div class="row col-md-12 ftd"> 
     <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("PRIJZEN", "Index", "Home")</p>
-    <p class="col-sm-3 col-md-2 ht fb">@Html.ActionLink("DE REDACTIE", "Index", "Home")</p>
+    <p class="col-sm-3 col-md-2 ht fp">@Html.ActionLink("DE REDACTIE", "Index", "Home")</p>
     <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("ABONNEMENT", "Index", "Home")</p>
     <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("CHARTS", "Index", "Home")</p>
     @*@Html.Partial("_LoginPartial")*@
@@ -40,5 +40,20 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker(
+            {format:"DD.MM.YYYY"});
+        $('#datetimepicker2').datetimepicker({
+            format:"DD.MM.YYYY"
+        });
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $("#datetimepicker2").data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+            $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
+        });
+    });
+    </script>
 </body>
 </html>
