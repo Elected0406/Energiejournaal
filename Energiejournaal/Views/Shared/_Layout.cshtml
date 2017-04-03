@@ -6,21 +6,24 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <meta name="description" content="Fucking Page" />
+    <meta name="description" content="Energy Journal Charts" />
 </head>
 <body>
-    <div class="container">
+    <div class="fbgw">
+        <div class="container">
             <a href="main.asp" class="row">
                 <img class="col-sm-12 col-md-4 logo" src="~/Content/img/ej.png" alt="Energy Journal logo">
                 <div clas="col-sm-12 col-md-8"></div>
             </a>
-        <div class="row"><div class="row col-md-12 ftd"> 
-    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("PRIJZEN", "Index", "Home")</p>
-    <p class="col-sm-3 col-md-2 ht fp">@Html.ActionLink("DE REDACTIE", "Index", "Home")</p>
-    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("ABONNEMENT", "Index", "Home")</p>
-    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("CHARTS", "Index", "Home")</p>
-    @*@Html.Partial("_LoginPartial")*@
-</div>
+            <div class="row">
+                <div class="row col-md-12 ftd">
+                    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("PRIJZEN", "Index", "Home")</p>
+                    <p class="col-sm-3 col-md-2 ht fp">@Html.ActionLink("DE REDACTIE", "Index", "Home")</p>
+                    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("ABONNEMENT", "Index", "Home")</p>
+                    <p class="col-sm-3 col-md-2 ht">@Html.ActionLink("CHARTS", "Index", "Home")</p>
+                    @*@Html.Partial("_LoginPartial")*@
+                </div>
+            </div>
         </div>
     </div>
     <hr style="width:100%;height:2px;background-color:#93B359;margin:0;">
@@ -40,20 +43,5 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker(
-            {format:"DD.MM.YYYY"});
-        $('#datetimepicker2').datetimepicker({
-            format:"DD.MM.YYYY"
-        });
-        $("#datetimepicker1").on("dp.change", function (e) {
-            $("#datetimepicker2").data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker2").on("dp.change", function (e) {
-            $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
-        });
-    });
-    </script>
 </body>
 </html>

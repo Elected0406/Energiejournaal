@@ -20,11 +20,13 @@ namespace Energiejournaal
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap",
+                      "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/Moment.js",
                       "~/Scripts/daterangepicker.js",
                       "~/Scripts/bootstrap-datetimepicker.js",
+                      "~/Scripts/highcharts.js",
+                      "~/Scripts/highchartsdata.js",
                       "~/Scripts/simple-tabs.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

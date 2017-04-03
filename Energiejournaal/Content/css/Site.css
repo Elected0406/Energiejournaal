@@ -6,7 +6,7 @@ body {
     font: 600 13px/23px "Open Sans", Arial, Helvetica, sans-serif;
     font-size:16px;
     color: #1896c0;
-    background-color: #fff;
+    background-color: #f6f6f6;
 }
 .container {
     padding: 0px;
@@ -21,6 +21,12 @@ body {
 .fp {
     padding: 0px;
 }
+.fp2 {
+    padding: 7px 0px 7px 0px;
+}
+.fpr {
+    padding-right: 0px;
+}
 .fb {
     border-radius: 0.25rem;
 }
@@ -28,31 +34,29 @@ body {
     padding-right: 15px;
     padding-left: 25px;
 }
+.ep-decor-module {
+    background-color: #f6f6f6;
+    margin-bottom: 30px;
+    padding: 20px 0px 0px 0px;
+}
 .form-group {
     margin-bottom: 0;
 }
 .text-right {
-    padding:10px;
     text-align: right !important;
     color:#404040;
     font-size:13px;
 }
 .time-btns {
-    display: inline-block;
     font: 600 13px/23px "Open Sans", Arial, Helvetica, sans-serif;
-    padding: 5px 10px 5px 10px;
     text-align: center;
     background-color: #bfbfbf;
     text-transform: uppercase;
-    -webkit-transition: color 0.3s ease 0s;
-    text-decoration: none;
-    border:3px solid #fff;
     color: #fff;
-    text-decoration: none;  
+
 }
 .time-btns:hover {
-       color: #88AA00;
-       text-decoration: none;
+       color: #fff;
        background-color: #666;
 }
 .footer {
@@ -78,18 +82,8 @@ body {
     padding-top: 25px;
     margin-top: 25px;
 }
-.input-group.date .input-group-addon {
-    cursor: pointer;
-    border: 1px solid #DDDDDD;
-}
-.calender-wrap .form-control {
-    border-radius: 5px 0 0 5px;
-    color: #404040;
-    padding: 6px;
-    width: 100px;
-}
 .input-group-addon:hover {
-       color: #88AA00;
+       color: #fff;
        text-decoration: none;
        background-color: #666;
 }
@@ -102,33 +96,33 @@ body {
     min-height: 250px;
 }
 .btn-primary {
-    background-color: #88aa00;
+    background-color: #93B359;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #93B359;
     color: #fff;
 }
 .btn-secondary {
-    background-color: #1a85be;
+    background-color: #2180B4;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #2180B4;
     color: #fff;
 }
 .btn-sm {
-    padding: 5px 15px;
+    padding: 7px 15px;
 }
 .btn {
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px 35px;
-    text-align: center;
     vertical-align: middle;
-    white-space: nowrap;
     font: 600 14px/24px "Open Sans", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    text-decoration: none;
     border: 0;
 }
 .form-control:focus {
     color: #464a4c;
-    background-color: #C6E2EE;
-    border-color: #464a4c;
+    background-color: #fff;
     outline: none;
     border-radius: 0px;
     border-radius: 3px 3px 0px 0px;
@@ -160,4 +154,17 @@ div {
   margin-top: 1px;
   z-index: 99999 !important;
   border-radius: 4px;
+}
+.fmt {
+margin-top:10px;
+}
+.fbgw {
+  background-color: #fff;
+  width: 100%;
+}
+.fbgg {
+  background-color: #464a4c;
+}
+.wrapper-all {
+      background-color: #F6F6F6;
 }

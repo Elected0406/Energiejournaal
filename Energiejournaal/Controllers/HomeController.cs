@@ -10,6 +10,8 @@ namespace Energiejournaal.Controllers
     {
         public ActionResult Index()
         {
+            @ViewBag.Country = "Country";
+            @ViewBag.Resource = "Resource";
             return View();
         }
 

@@ -1,70 +1,108 @@
 ﻿@{
     ViewBag.Title = "CHARTS";
 }
-<section class="content-wrap yobject-marked">
-    <div class="wrapper-all">
-        <div class="container">
-            <div class="ep-decor-module">
-                <div class="row row-min">
-                    <div class="col-sm-12 col-lg-6">
+<div class="container">
+    <div class="ep-decor-module">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8">
+                <div class="row">
+                    <div class="col-sm-12 col-xl-6 fmt">
                         <div class="row">
-                            <a href="#" class="time-btns col-sm-3 fb">3 MONTHS</a>
-                            <a href="#" class="time-btns col-sm-3 fb">6 MONTHS</a>
-                            <a href="#" class="time-btns col-sm-3 fb">1 YEAR</a>
-                            <a href="#" class="time-btns col-sm-3 fb">5 YEARS</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-6 calender-wrap fp">
-                        <div class="row row-min">
-                            <div class="col-sm-2 text-right">Select Date</div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker1">
-                                        <input type="text" class="form-control" />
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </div>
-                                </div>
+                            <div class="col-sm-3 fpr">
+                                <a href="#" class="fp2 btn btn-block time-btns">1 MONTH</a>
                             </div>
-                            <div class="col-sm-5">
-                                <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker2">
-                                        <input type="text" class="form-control" />
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                    </div>
-                                </div>
+                            <div class="col-sm-3 fpr">
+                                <a href="#" class="fp2 btn btn-block time-btns">6 MONTHS</a>
+                            </div>
+                            <div class="col-sm-3 fpr">
+                                <a href="#" class="fp2 btn btn-block time-btns">1 YEAR</a>
+                            </div>
+                            <div class="col-sm-3 fpr">
+                                <a href="#" class="fp2 btn btn-block time-btns">5 YEARS</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 fpr fmt">
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker1">
+                                <input type="text" class="form-control" placeholder="Select Date" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 fpr fmt">
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker2">
+                                <input type="text" class="form-control" placeholder="Select Date" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 fpr fmt">
                         <select class="form-control">
                             <option>Power</option>
-                            <option>option-02</option>
-                            <option>option-03</option>
-                            <option>option-04</option>
-                            <option>option-05</option>
+                            <option>Oil</option>
+                            <option>Gas</option>
+                            <option>Gold</option>
                         </select>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 fpr fmt">
                         <select class="form-control">
                             <option>Austria</option>
-                            <option>option-02</option>
-                            <option>option-03</option>
-                            <option>option-04</option>
-                            <option>option-05</option>
+                            <option>Belgium</option>
+                            <option>France</option>
+                            <option>Germany</option>
+                            <option>Austria</option>
                         </select>
                     </div>
-                    <div class="col-sm-3">
-                        <a href="#" class="btn btn-primary btn-block btn-sm"><i class="fa fa-eye"></i> View Chart</a>
-                    </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-6 col-md-6 col-xl-3 fpr fmt">
                         <a href="#" class="btn btn-secondary btn-block btn-sm"><i class="fa fa-line-chart"></i> Add Curve</a>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-xl-3 fpr fmt">
+                        <a href="#" class="btn btn-primary btn-block btn-sm"><i class="fa fa-eye"></i> View Chart</a>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
+                </div>               
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container2"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container3"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container4"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+            @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+            <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+            <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
+            @*<img src="~/Content/img/qwertypng.png" class="col-sm-12 logo fmt" />*@
         </div>
     </div>
-</section>
+</div>
