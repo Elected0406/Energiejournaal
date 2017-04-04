@@ -43,5 +43,10 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        function OnFailure(request, error) {
+            $("#results").html("Ты ёбанный мудак учи программирование!");
+        }
+    </script>
 </body>
 </html>

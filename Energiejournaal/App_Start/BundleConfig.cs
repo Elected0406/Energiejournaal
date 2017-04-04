@@ -20,6 +20,7 @@ namespace Energiejournaal
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/jquery.unobtrusive-ajax.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/Moment.js",

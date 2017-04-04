@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 fpr fmt">
+                    <div class="col-sm-3 col-xl-4 fpr fmt">
                         <select class="form-control">
                             <option>Power</option>
                             <option>Oil</option>
@@ -50,7 +50,7 @@
                             <option>Gold</option>
                         </select>
                     </div>
-                    <div class="col-sm-3 fpr fmt">
+                    <div class="col-sm-3 col-xl-4 fpr fmt">
                         <select class="form-control">
                             <option>Austria</option>
                             <option>Belgium</option>
@@ -59,50 +59,50 @@
                             <option>Austria</option>
                         </select>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-xl-3 fpr fmt">
-                        <a href="#" class="btn btn-secondary btn-block btn-sm"><i class="fa fa-line-chart"></i> Add Curve</a>
+                    <div class="col-sm-12 col-md-12 col-xl-4 fpr fmt">
+                        @using (Ajax.BeginForm("BookSearch", new AjaxOptions { UpdateTargetId = "container1", Confirm = "Выполнить AJAX-запрос?" }))
+                        {
+                            <a href="#" type="submit" class="btn btn-primary btn-block btn-sm"><i class="fa fa-eye"></i>View Chart</a>
+                        }
+                        </div>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-xl-3 fpr fmt">
-                        <a href="#" class="btn btn-primary btn-block btn-sm"><i class="fa fa-eye"></i> View Chart</a>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                    <div id="container1"></div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                        <div class="col-sm-4"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
-                </div>               
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container2"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
+                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                    <div id="container2"></div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                        <div class="col-sm-4"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container3"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
+                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                    <div id="container3"></div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                        <div class="col-sm-4"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container4"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
+                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                    <div id="container4"></div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                        <div class="col-sm-4"></div>
+                    </div>
                 </div>
-            </div>
-            @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
-            <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
-            <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
-            @*<img src="~/Content/img/qwertypng.png" class="col-sm-12 logo fmt" />*@
-        </div>
-    </div>
-</div>
+                @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+                    <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+                    <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
+                            @*<img src="~/Content/img/qwertypng.png" class="col-sm-12 logo fmt" />*@
+                        </div>
+                    </div>
+                </div>

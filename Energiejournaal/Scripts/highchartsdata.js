@@ -1,4 +1,6 @@
-﻿    $(function () {
+﻿var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
+var name = ['Power Belgium Spot EUR/MWh'];
+$(function () {
         $('#datetimepicker1').datetimepicker(
             {format:"DD.MM.YYYY"});
         $('#datetimepicker2').datetimepicker({
@@ -12,12 +14,12 @@
         });
     });
 $(function () {
-    $('#container').highcharts({
+    $('#container1').highcharts({
         chart: {
             type: 'spline'
         },
         title: {
-            text: 'Power Belgium Spot EUR/MWh'
+            text: name
         },
         xAxis: {
             type: 'datetime',
@@ -40,7 +42,7 @@ $(function () {
                     enabled: false
                 },
                 pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(2017, 1, 1, 0, 0, 0)
+                pointStart: Date.UTC(2017, 0, 0)
             }
         },
         yAxis: {
@@ -57,8 +59,8 @@ $(function () {
             }
         },
         series: [{
-            name: 'Power Belgium Spot EUR/MWh',
-            data: [0, 0.6, 0.9, 0.8, 0.2, 0, 0, 0, 0.1, 0.6, 0.7, 0.8, 0.6, 0.2, 0, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
+            name: name,
+            data: temperatures,
         }],
     });
 });
