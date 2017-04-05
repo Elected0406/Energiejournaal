@@ -3,26 +3,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
 using System.Web.Mvc;
 
 namespace Energiejournaal.Controllers
 {
     public class HomeController : Controller
     {
+        private ChartModelEntities db = new ChartModelEntities();
+        int selectedIndex = 1;
         public ActionResult Index()
-        {
+        {            
+            SelectList Groups = new SelectList(db.vwGroups, "Id", "Name", selectedIndex);
+            ViewBag.Groups = Groups;
+            SelectList Chart = new SelectList(db.vwCharts.Where(c => c.ID == selectedIndex), "Id", "Name");
+            ViewBag.Chart = Chart;
             return View();
         }
-        public JsonResult GetUsers()
+        public ActionResult GetItems(int id)
         {
-            List<User> users = new List<User>
-            {
-                new User { Id=1, Name="Tom", Age=23},
-                new User { Id=2, Name="Jack", Age=22},
-                new User { Id=3, Name="Alice", Age=24},
-                new User { Id=4, Name="Mike", Age=26},
-            };
-            return Json(users, JsonRequestBehavior.AllowGet);
+            return PartialView(db.vwCharts.Where(c => c.ID == id).ToList());
+        }
+        public JsonResult GetData()
+        {
+            List<vwData> data = db.vwDatas.Where(p => p.Chart == selectedIndex).ToList();
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
         //public ActionResult BookSearch(string name)
         //{

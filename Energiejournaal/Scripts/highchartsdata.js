@@ -1,6 +1,4 @@
-﻿var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
-var name = ['Power Belgium Spot EUR/MWh'];
-$(function () {
+﻿$(function () {
         $('#datetimepicker1').datetimepicker(
             {format:"DD.MM.YYYY"});
         $('#datetimepicker2').datetimepicker({

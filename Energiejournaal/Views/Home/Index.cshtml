@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  Energiejournaal.Models.vwChart
+@{
     ViewBag.Title = "CHARTS";
 }
 <div class="container">
@@ -43,66 +44,56 @@
                         </div>
                     </div>
                     <div class="col-sm-3 col-xl-4 fpr fmt">
-                        <select class="form-control">
-                            <option>Power</option>
-                            <option>Oil</option>
-                            <option>Gas</option>
-                            <option>Gold</option>
-                        </select>
+                        @Html.DropDownList("Groups", ViewBag.Groups as SelectList, new { id = "Groups", @class = "col-sm-12 fp list-group-item form-control" })
                     </div>
                     <div class="col-sm-3 col-xl-4 fpr fmt">
-                        <select class="form-control">
-                            <option>Austria</option>
-                            <option>Belgium</option>
-                            <option>France</option>
-                            <option>Germany</option>
-                            <option>Austria</option>
-                        </select>
+                        @Html.DropDownList("Chart", ViewBag.Chart as SelectList, new { id = "Chart", @class = "col-sm-12 fp list-group-item form-control" })
                     </div>
                     <div class="col-sm-12 col-md-12 col-xl-4 fpr fmt">
-                        @using (Ajax.BeginForm("BookSearch", new AjaxOptions { UpdateTargetId = "container1", Confirm = "Выполнить AJAX-запрос?" }))
-                        {
-                            <a href="#" type="submit" class="btn btn-primary btn-block btn-sm"><i class="fa fa-eye"></i>View Chart</a>
+                        <div id="contentt"></div>
+                        <button class="btn" id="displayBtn">Показать</button>
+                        @section scripts{
+                            <script src='@Url.Content("~/Scripts/app.js")'></script>
                         }
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                    <div id="container1"></div>
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                        <div class="col-sm-4"></div>
-                    </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container1"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                    <div id="container2"></div>
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                        <div class="col-sm-4"></div>
-                    </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container2"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                    <div id="container3"></div>
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                        <div class="col-sm-4"></div>
-                    </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container3"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                    <div id="container4"></div>
-                    <div class="row">
-                        <div class="col-sm-4"></div>
-                        <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                        <div class="col-sm-4"></div>
-                    </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
+                <div id="container4"></div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
+                    <div class="col-sm-4"></div>
                 </div>
-                @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
-                    <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
-                    <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
-                            @*<img src="~/Content/img/qwertypng.png" class="col-sm-12 logo fmt" />*@
-                        </div>
-                    </div>
-                </div>
+            </div>
+            @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+                <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
+                <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
+            @*<img src="~/Content/img/qwertypng.png" class="col-sm-12 logo fmt" />*@
+        </div>
+    </div>
+</div>
