@@ -1,23 +1,23 @@
 ﻿$(function () {
-        $('#datetimepicker1').datetimepicker(
-            {format:"DD.MM.YYYY"});
-        $('#datetimepicker2').datetimepicker({
-            format:"DD.MM.YYYY"
-        });
-        $("#datetimepicker1").on("dp.change", function (e) {
-            $("#datetimepicker2").data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker2").on("dp.change", function (e) {
-            $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
-        });
+    $('#datetimepicker1').datetimepicker(
+        { format: "DD.MM.YYYY" });
+    $('#datetimepicker2').datetimepicker({
+        format: "DD.MM.YYYY"
     });
+    $("#datetimepicker1").on("dp.change", function (e) {
+        $("#datetimepicker2").data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker2").on("dp.change", function (e) {
+        $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
+    });
+});
 $(function () {
     $('#container1').highcharts({
         chart: {
             type: 'spline'
         },
         title: {
-            text: name
+            text: 'Oil Belgium Spot EUR/Barel'
         },
         xAxis: {
             type: 'datetime',
@@ -40,7 +40,7 @@ $(function () {
                     enabled: false
                 },
                 pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(2017, 0, 0)
+                pointStart: Date.UTC(2017, 1, 1, 0, 0, 0)
             }
         },
         yAxis: {

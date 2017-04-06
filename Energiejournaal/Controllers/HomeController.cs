@@ -20,24 +20,36 @@ namespace Energiejournaal.Controllers
             ViewBag.Chart = Chart;
             return View();
         }
-        public ActionResult GetItems(int id)
+        public JsonResult GetCharts(int id)
         {
-            return PartialView(db.vwCharts.Where(c => c.ID == id).ToList());
+            SelectList Chart = new SelectList(db.vwCharts.Where(c => c.ID == id), "Id", "Name");
+            return Json(Chart, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetData()
+        public JsonResult GetData(int id)
         {
-            List<vwData> data = db.vwDatas.Where(p => p.Chart == selectedIndex).ToList();
-            return Json(data, JsonRequestBehavior.AllowGet);
+             List <vwData> chartdata = db.vwDatas.Where(p => p.Chart == id).ToList();
+            return Json(chartdata, JsonRequestBehavior.AllowGet);
         }
-        //public ActionResult BookSearch(string name)
+        //public JsonResult Getcharts()
         //{
-        //    var allbooks = db.Books.Where(a => a.Author.Contains(name)).ToList();
-        //    if (allbooks.Count <= 0)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return PartialView(allbooks);
+        //    SelectList Chart = new SelectList(db.vwCharts.Where(c => c.Group == selectedGroup), "Id", "Name");
+        //    return Json(Chart, JsonRequestBehavior.AllowGet);
         //}
+        //public JsonResult GetData()
+        //{
+        //    List<vwData> data = db.vwDatas.Where(p => p.Chart == selectedIndex).ToList();
+        //    return Json(data, JsonRequestBehavior.AllowGet);
+        //}
+        public JsonResult GetUsers()
+        {
+            List<User> users = new List<User>
+        {
+            new User {Id=1, Name="Tom", Age=23},
+            new User {Id=2, Name="Alice", Age=28},
+            new User {Id=3, Name="Bill", Age=32}
+        };
+            return Json(users, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -19,7 +19,7 @@
                                 <a href="#" class="fp2 btn btn-block time-btns">1 YEAR</a>
                             </div>
                             <div class="col-sm-3 fpr">
-                                <a href="#" class="fp2 btn btn-block time-btns">5 YEARS</a>
+                                <a href="#" class="fp2 btn btn-block time-btns">All time</a>
                             </div>
                         </div>
                     </div>
@@ -49,12 +49,7 @@
                     <div class="col-sm-3 col-xl-4 fpr fmt">
                         @Html.DropDownList("Chart", ViewBag.Chart as SelectList, new { id = "Chart", @class = "col-sm-12 fp list-group-item form-control" })
                     </div>
-                    <div class="col-sm-12 col-md-12 col-xl-4 fpr fmt">
-                        <div id="contentt"></div>
-                        <button class="btn" id="displayBtn">Показать</button>
-                        @section scripts{
-                            <script src='@Url.Content("~/Scripts/app.js")'></script>
-                        }
+                    <div id="Data" class="col-sm-12 col-xl-6 fmt">
                     </div>
                 </div>
             </div>
