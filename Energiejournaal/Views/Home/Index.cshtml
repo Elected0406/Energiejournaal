@@ -44,11 +44,31 @@
                         </div>
                     </div>
                     <div class="col-sm-3 col-xl-4 fpr fmt">
-                        @Html.DropDownList("Groups", ViewBag.Groups as SelectList, new { id = "Groups", @class = "col-sm-12 fp list-group-item form-control" })
+                        <div class="form-group">
+                            <select class="form-control" name="Groups" id="Groups" value="">
+                                <option disabled selected>Select Group</option>
+                                @foreach (var group in ViewBag.Groups)
+                                {
+                                <option>@group.Name</option>
+                                }
+                                <option>Dfgh</option>
+                                <option>dfgh</option>
+                                <option>dfgh</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-sm-3 col-xl-4 fpr fmt">
-                        @Html.DropDownList("Chart", ViewBag.Chart as SelectList, new { id = "Chart", @class = "col-sm-12 fp list-group-item form-control" })
+                        <div class="form-group">
+                            <select class="form-control" name="Chart" id="Chart">
+                                <option disabled selected>Select Chart</option>                               
+                                @foreach (var chart in ViewBag.Charts)
+                                {
+                                    <option>@chart.Name</option>
+                                }                                           
+                            </select>
+                        </div>
                     </div>
+                        <a href="#" type="button" id="displayBtn" class="btn btn-primary btn-block col-sm-12 col-xl-4 fmt">Add Data</a>
                     <div id="Data" class="col-sm-12 col-xl-6 fmt">
                     </div>
                 </div>

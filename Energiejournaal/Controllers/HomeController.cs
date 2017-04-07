@@ -13,33 +13,21 @@ namespace Energiejournaal.Controllers
         private ChartModelEntities db = new ChartModelEntities();
         int selectedIndex = 1;
         public ActionResult Index()
-        {            
-            SelectList Groups = new SelectList(db.vwGroups, "Id", "Name", selectedIndex);
-            ViewBag.Groups = Groups;
-            SelectList Chart = new SelectList(db.vwCharts.Where(c => c.ID == selectedIndex), "Id", "Name");
-            ViewBag.Chart = Chart;
+        {
+            ViewBag.Groups = db.vwGroups.ToList();
+            ViewBag.Charts = db.vwCharts.Where(c => c.ID == selectedIndex).ToList();
             return View();
         }
         public JsonResult GetCharts(int id)
         {
-            SelectList Chart = new SelectList(db.vwCharts.Where(c => c.ID == id), "Id", "Name");
+            var Chart = db.vwCharts.Where(p => p.ID == id).ToList();
             return Json(Chart, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetData(int id)
         {
-             List <vwData> chartdata = db.vwDatas.Where(p => p.Chart == id).ToList();
+            List<vwData> chartdata = db.vwDatas.Where(p => p.Chart == id).ToList();
             return Json(chartdata, JsonRequestBehavior.AllowGet);
         }
-        //public JsonResult Getcharts()
-        //{
-        //    SelectList Chart = new SelectList(db.vwCharts.Where(c => c.Group == selectedGroup), "Id", "Name");
-        //    return Json(Chart, JsonRequestBehavior.AllowGet);
-        //}
-        //public JsonResult GetData()
-        //{
-        //    List<vwData> data = db.vwDatas.Where(p => p.Chart == selectedIndex).ToList();
-        //    return Json(data, JsonRequestBehavior.AllowGet);
-        //}
         public JsonResult GetUsers()
         {
             List<User> users = new List<User>
