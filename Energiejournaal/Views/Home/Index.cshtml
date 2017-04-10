@@ -48,7 +48,7 @@
                             <option disabled selected>Select Group</option>
                             @foreach (var group in ViewBag.Groups)
                             {
-                                <option>@group.Name</option>
+                                <option label="@group.Name">@group.ID</option>
                             }
                         </select>
                     </div>
@@ -57,15 +57,16 @@
                             <option disabled selected>Select Chart</option>
                             @foreach (var chart in ViewBag.Charts)
                             {
-                                <option>@chart.Name</option>
+                                <option label="@chart.Name">@chart.ID</option>
                             }
                         </select>
                     </div>
                     <div class="col-sm-12 fpr">
                         <div type="button" id="displayBtn" class="btn btn-primary btn-block col-sm-12 col-xl-4 fmt">Add Data</div>
-                        <div type="button" id="displayBtn2" class="btn btn-primary btn-block col-sm-12 col-xl-4 fmt">Add Data</div>
                     </div>
-                    <div id="Data" class="col-sm-12 col-xl-6">
+                    <div class="col-sm-12 col-xl-6">
+                        <div id="Data" class="col-sm-12 col-xl-6">
+                        </div>
                     </div>
                 </div>
             </div>
