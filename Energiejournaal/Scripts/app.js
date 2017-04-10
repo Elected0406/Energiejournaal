@@ -30,16 +30,29 @@ var GroupsList = (function () {
 }());
 var ChartsList = (function () {
     function ChartsList() {
+        this.charts = new Array();
     }
     ChartsList.prototype.UpdateChart = function () {
-        $("#Groups").change(function () {
-            var id = $("#Groups").val();
-            $.ajax('http://localhost:4051/Home/GetCharts' + '?id=' + id, function (data) {
-                $("#Chart").replaceWith(data);
-            });
+        var _this = this;
+        var id = $(this).val();
+        $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + id, function (data) {
+            _this.charts = data;
+            var select = '<select class="form-control">';
+            for (var i = 0; i < _this.charts.length; i++) {
+                var selectRow = '<option>' + _this.charts[i].Name + '</option>';
+            }
+            select += '<option disabled selected> Select Chart</option>';
+            select += selectRow;
+            select += '</select>';
+            $("#Chart").replaceWith(select);
         });
     };
     return ChartsList;
+}());
+var vwChart = (function () {
+    function vwChart() {
+    }
+    return vwChart;
 }());
 var UserList = (function () {
     function UserList() {
@@ -72,6 +85,6 @@ var User = (function () {
 window.onload = function () {
     var userList = new UserList();
     var chartsList = new ChartsList();
-    $("#displayBtn").click(function () { userList.displayUsers(); chartsList.UpdateChart; });
+    $("#displayBtn").click(function () { userList.displayUsers(); });
+    $("#displayBtn2").click(function () { chartsList.UpdateChart(); });
 };
-//# sourceMappingURL=app.js.map

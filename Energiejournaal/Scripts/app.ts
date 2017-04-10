@@ -27,16 +27,31 @@ class GroupsList {
 
 }
 class ChartsList {
+    private charts: Array<vwChart> = new Array<vwChart>();
     UpdateChart(): void {
-        $("#Groups").change(() => {           
-            var id = $("#Groups").val()
-            $.ajax('http://localhost:4051/Home/GetCharts' + '?id=' + id,
-                (data) => {
-                    $("#Chart").replaceWith(data);
+        var id = $(this).val();
+        $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + id,
+            (data) => {
+                this.charts = data;
+                var select = '<select class="form-control">'
+                for (var i = 0; i < this.charts.length; i++) {
+                    var selectRow = 
+                    '<option>' + this.charts[i].Name + '</option>';                    
                 }
-            );
-        });
+                select += '<option disabled selected> Select Chart</option>';
+                select += selectRow;
+                select += '</select>';
+                $("#Chart").replaceWith(select);
+            });        
     }
+}
+class vwChart {
+
+    Id: number;
+    Name: string;
+    Group: number;
+    Period: number;
+    PeriodName: string;
 }
 class UserList {
 
@@ -60,7 +75,6 @@ class UserList {
             });
     }
 }
-
 class User {
 
     Id: number;
@@ -70,5 +84,6 @@ class User {
 window.onload = () => {
     var userList: UserList = new UserList();
     var chartsList: ChartsList = new ChartsList();
-    $("#displayBtn").click(() => { userList.displayUsers(); chartsList.UpdateChart; });
+    $("#displayBtn").click(() => { userList.displayUsers(); });
+    $("#displayBtn2").click(() => { chartsList.UpdateChart(); });
 }

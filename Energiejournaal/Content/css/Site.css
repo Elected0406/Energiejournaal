@@ -95,6 +95,9 @@ body {
     padding: 30px 0 20px;
     min-height: 250px;
 }
+.btn:hover {
+cursor:pointer;
+}
 .btn-primary {
     background-color: #93B359;
     color: #fff;
@@ -102,6 +105,7 @@ body {
 .btn-primary:hover {
     background-color: #93B359;
     color: #fff;
+    cursor:pointer;
 }
 .btn-secondary {
     background-color: #2180B4;

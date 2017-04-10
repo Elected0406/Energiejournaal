@@ -23,9 +23,10 @@ namespace Energiejournaal.Controllers
             var Chart = db.vwCharts.Where(p => p.ID == id).ToList();
             return Json(Chart, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetData(int id)
+        public JsonResult GetData()
         {
-            List<vwData> chartdata = db.vwDatas.Where(p => p.Chart == id).ToList();
+            var id = 2;
+            List<vwData> chartdata = db.vwDatas.Where(p => p.ID == id).ToList();
             return Json(chartdata, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetUsers()
