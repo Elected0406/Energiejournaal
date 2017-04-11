@@ -5,7 +5,7 @@ class ChartsList {
     private charts: Array<vwChart> = new Array<vwChart>();
     private chartdata: Array<vwData> = new Array<vwData>();
     UpdateChart(): void {
-        $("#Groups").change(function () {
+        $(document).on('change', '#Groups',function () {
             var id = $(this).val();
             $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + id,
                 (data) => {
@@ -36,7 +36,5 @@ class vwData {
     ChartName: string;
     Value: number;
 }
-window.onload = () => {
     var chartsList: ChartsList = new ChartsList();
     chartsList.UpdateChart();
-}

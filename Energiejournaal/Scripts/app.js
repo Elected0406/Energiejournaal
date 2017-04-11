@@ -7,7 +7,7 @@ var ChartsList = (function () {
         this.chartdata = new Array();
     }
     ChartsList.prototype.UpdateChart = function () {
-        $("#Groups").change(function () {
+        $(document).on('change', '#Groups', function () {
             var _this = this;
             var id = $(this).val();
             $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + id, function (data) {
@@ -35,7 +35,5 @@ var vwData = (function () {
     }
     return vwData;
 }());
-window.onload = function () {
-    var chartsList = new ChartsList();
-    chartsList.UpdateChart();
-};
+var chartsList = new ChartsList();
+chartsList.UpdateChart();
