@@ -1,15 +1,39 @@
 ﻿/// <reference path="typings/jquery/jquery.d.ts" />
-var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
-var name = 'Power Belgium Spot EUR/MWh';
+interface IvwChart {
+    Id: number;
+    Name: string;
+    Group: number;
+    Period: number;
+    PeriodName: string;
+}
+class vwChart implements IvwChart {
+    constructor(
+        public Id: number,
+        public Name: string,
+        public Group: number,
+        public Period: number,
+        public PeriodName: string) { }
+}
+interface IvwData {
+    Chart: number;
+    ChartName: string;
+    Value: number;
+}
+class vwData implements IvwData {
+    constructor(
+        public Chart: number,
+        public ChartName: string,
+        public Value: number) { }
+}
 class ChartsList {
-    private charts: Array<vwChart> = new Array<vwChart>();
-    private chartdata: Array<vwData> = new Array<vwData>();
+    public charts: Array<vwChart> = new Array<vwChart>();
+    public chartdata: Array<vwData> = new Array<vwData>();
     UpdateChart(): void {
-        $(document).on('change', '#Groups',function () {
-            var id = $(this).val();
+        $(document).on('change', '#Groups', function () {
+            var id = $('#Groups').val();
             $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + id,
                 (data) => {
-                    this.charts = data;
+                    this.data = data;
                     var select = '<select class="form-control">'
                     for (var i = 0; i < this.charts.length; i++) {
                         var selectRow =
@@ -23,18 +47,15 @@ class ChartsList {
         });
     }
 }
-class vwChart {
+var chartsList: ChartsList = new ChartsList();
+chartsList.UpdateChart();
 
-    Id: number;
-    Name: string;
-    Group: number;
-    Period: number;
-    PeriodName: string;
-}
-class vwData {
-    Chart: number;
-    ChartName: string;
-    Value: number;
-}
-    var chartsList: ChartsList = new ChartsList();
-    chartsList.UpdateChart();
+
+
+
+
+
+
+
+var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
+var name = 'Power Belgium Spot EUR/MWh';
