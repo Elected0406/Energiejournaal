@@ -25,7 +25,9 @@ namespace Energiejournaal.Controllers
         }
         public JsonResult GetData(int id, DateTime mindate, DateTime maxdate)
         {
+            
             var chartdata = db.vwDatas.Where(p => p.Chart == id).Where(s => s.Date >= mindate).Where(s => s.Date <= maxdate).ToList();
+            var chartdatacount = chartdata.Count;
             return Json(chartdata, JsonRequestBehavior.AllowGet);
         }
         public ActionResult About()

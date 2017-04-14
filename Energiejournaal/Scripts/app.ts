@@ -1,5 +1,5 @@
 ﻿/// <reference path="typings/jquery/jquery.d.ts" />
-//import Highcharts from "../highcharts.js";
+//Highcharts.chart('container', {})
 interface IvwChart {
     Id: number;
     Name: string;
@@ -71,7 +71,7 @@ class DataList {
         $.getJSON('http://localhost:4051/Home/GetData' + '?id=' + $('#Chart').val()
             + '&' + 'mindate=' + $('#mindate').val() + '&' + 'maxdate=' + $('#maxdate').val(),
             (data) => {
-                Highcharts.chart('container', {})
+                
                 var select =
                     '<div class="row fpr">' +
                     '<div class="col-sm-6 btn-primary">' + 'ChartName' + '</div>' +
@@ -93,7 +93,7 @@ class DataList {
                         select += selectRow;
                 }            
                 select += '</div>';
-                $("#Data").html(select);
+                $("#Data2").html(select);
             });
     }
 }
