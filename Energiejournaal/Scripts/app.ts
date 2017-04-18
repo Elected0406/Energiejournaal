@@ -1,5 +1,6 @@
-﻿/// <reference path="typings/jquery/jquery.d.ts" />
-//Highcharts.chart('container', {})
+﻿///<script type="text / javascript" src ="js / highcharts.js">
+/// <reference path="typings/jquery/jquery.d.ts" />
+
 interface IvwChart {
     Id: number;
     Name: string;
@@ -32,36 +33,36 @@ interface IvwData {
 }
 class vwData implements IvwData {
     constructor(
-        public  ID: number,
-        public  Chart: number,
-        public  ChartName: string,
-        public  Line: number,
-        public  LineName: string,
-        public  LineType: number,
-        public  LineTypeName: string,
-        public  Period: number,
-        public  PeriodName: string,
-        public  Date: string,
-        public  Value: number,
-        public  Year: number,
-        public  Month: number) { }
+        public ID: number,
+        public Chart: number,
+        public ChartName: string,
+        public Line: number,
+        public LineName: string,
+        public LineType: number,
+        public LineTypeName: string,
+        public Period: number,
+        public PeriodName: string,
+        public Date: string,
+        public Value: number,
+        public Year: number,
+        public Month: number) { }
 }
 class ChartsList {
     public charts: Array<vwChart> = new Array<vwChart>();
     UpdateChartList(): void {
-            $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + $('#Groups').val(),
-                (data) => {
-                        var select = '<select class="form-control">'
-                        for (var i = 0; i < data.length; i++) {
-                            var selectRow =
-                                '<option label="' + data[i].Name +
-                                '" value="' + data[i].ID + '">' + '</option>';
-                        }
-                        select += '<option disabled selected> Select Chart</option>';
-                        select += selectRow;
-                        select += '</select>';
-                        $("#Chart").html(select);             
-        });
+        $.getJSON('http://localhost:4051/Home/GetCharts' + '?id=' + $('#Groups').val(),
+            (data) => {
+                var select = '<select class="form-control">'
+                for (var i = 0; i < data.length; i++) {
+                    var selectRow =
+                        '<option label="' + data[i].Name +
+                        '" value="' + data[i].ID + '">' + '</option>';
+                }
+                select += '<option disabled selected> Select Chart</option>';
+                select += selectRow;
+                select += '</select>';
+                $("#Chart").html(select);
+            });
     }
 }
 class DataList {
@@ -71,9 +72,9 @@ class DataList {
         $.getJSON('http://localhost:4051/Home/GetData' + '?id=' + $('#Chart').val()
             + '&' + 'mindate=' + $('#mindate').val() + '&' + 'maxdate=' + $('#maxdate').val(),
             (data) => {
-                
+
                 var select =
-                    '<div class="row fpr">' +
+                    '<div class="row fpr fmt">' +
                     '<div class="col-sm-6 btn-primary">' + 'ChartName' + '</div>' +
                     '<div class="col-sm-1 btn-primary">' + 'Line' + '</div>' +
                     '<div class="col-sm-2 btn-primary">' + 'LineName' + '</div>' +
@@ -90,8 +91,8 @@ class DataList {
                         '<div class="col-sm-1">' + this.ChartData[i].Value + '</div>' +
                         '<div class="col-sm-1">' + this.ChartData[i].Year + '</div>' +
                         '<div class="col-sm-1">' + this.ChartData[i].Month + '</div>';
-                        select += selectRow;
-                }            
+                    select += selectRow;
+                }
                 select += '</div>';
                 $("#Data2").html(select);
             });
@@ -102,4 +103,5 @@ $('#Groups').change(function () { chartsList.UpdateChartList(); });
 var ChartData: DataList = new DataList();
 $('#displayBtn').click(function () { ChartData.UpdateChartData(); });
 var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
+var Chartname = 'Chart 2';
 var name = 'Power Belgium Spot EUR/MWh';

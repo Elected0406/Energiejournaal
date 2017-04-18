@@ -17,17 +17,11 @@ $(function () {
             type: 'spline'
         },
         title: {
-            text: 'Oil Belgium Spot EUR/Barel'
-        },
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
+            text: 'Chart 2'
         },
         tooltip: {
             crosshairs: true,
-            shared: true
+            shared: true,
         },
         plotOptions: {
             spline: {
@@ -45,22 +39,19 @@ $(function () {
                 marker: {
                     enabled: false
                 },
-                tickInterval: 7 * 24 * 3600 * 1000, // one week
-                tickWidth: 0,
-                pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(1999, 1, 1, 0, 0, 0)
-
+                pointInterval: 24 * 36e5 
             },
+        },
+        xAxis: {
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
         },
         yAxis: {
             title: {
                 enabled: false
             },
-            minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            formatter: function () {
-                return this.value + '$';
-            }
         },
         navigation: {
             menuItemStyle: {
@@ -68,189 +59,68 @@ $(function () {
             }
         },
         series: [{
-            name: name,
-            data: temperatures,
+            name: 'Aftap condensatie stoomturbine',
+            data: [[Date.UTC(1950 , 01 , 01), 0],
+                    [Date.UTC(1965 , 01 , 01), 0.28],
+                    [Date.UTC(1980 , 01 , 01), 0.25],
+                    [Date.UTC(1983 , 01 , 01), 0.2],
+                    [Date.UTC(1991 , 01 , 01), 0.28],
+                    [Date.UTC(1992 , 01 , 01), 0.28],
+                    [Date.UTC(1994 , 01 , 01), 0.47],
+                    [Date.UTC(1995 , 01 , 01), 0.79],
+                    [Date.UTC(1996 , 01 , 01), 0.72],
+                    [Date.UTC(1997 , 01 , 01), 1.02],
+                    [Date.UTC(1998 , 01 , 01), 1.12],
+                    [Date.UTC(1999 , 01 , 01), 1.2],
+                    [Date.UTC(2000 , 01 , 01), 1.18],
+                    [Date.UTC(2001 , 01 , 01), 1.19],
+                    [Date.UTC(2002 , 01 , 01), 1.85],
+                    [Date.UTC(2003 , 01 , 01), 2.22],
+                    [Date.UTC(2004 , 01 , 01), 1.15],
+                    [Date.UTC(2005 , 01 , 01), 0],
+                    [Date.UTC(2006 , 01 , 01), 0.28],
+                    [Date.UTC(2007 , 01 , 01), 0.25],
+                    [Date.UTC(2008 , 01 , 01), 0.2],
+                    [Date.UTC(2009 , 01 , 01), 0.28],
+                    [Date.UTC(2010 , 01 , 01), 0.28],
+                    [Date.UTC(2011 , 01 , 01), 0.47],
+                    [Date.UTC(2012 , 01 , 01), 0.79],
+                    [Date.UTC(2013 , 01 , 01), 0.72],
+                    [Date.UTC(2014 , 01 , 01), 1.02],
+                    [Date.UTC(2015 , 01 , 01), 1.12],
+                    [Date.UTC(2016 , 01 , 01), 1.2]]
         }, {
-            name: 'Oil Belgium Spot EUR/Barel',
-            data: [9.6, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }, {
-            name: 'Tokyo',
-            data: [1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 8.6, 7.2, 9, 10.9, 11.5, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9]
-        }, {
-            name: 'London',
-            data: [0.8, 7.0, 6.9, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 0.6, 0.2, 0, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6, 0.8, 0.8, 1]
-        }, {
-            name: 'Oil Belgium Spot EUR/Barel2',
-            data: [9.6, 0.8, 0.8, 1, 1.3, 1.5, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }, {
-            name: 'Tokyo2',
-            data: [1.5, 2.9, 1.9, 2.6, 1.6, 3, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9]
-        }, {
-            name: 'London2',
-            data: [0.8, 7.0, 6.9, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.50, 1, 0.6, 0.7, 0.8, 0.6, 0.2, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6, 0.8, 0.8, 1]
-        }, {
-            name: 'Oil Belgium Spot EUR/Barel3',
-            data: [9.6, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }, {
-            name: 'Tokyo3',
-            data: [1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9]
-        }, {
-            name: 'London3',
-            data: [14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6, 0.8, 0.8, 1]
-        }
-        ]
-    });
-});
-$(function () {
-    $('#container2').highcharts({
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: 'Oil Belgium Spot EUR/Barel'
-        },
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        tooltip: {
-            valueSuffix: ''
-        },
-        plotOptions: {
-            spline: {
-                lineWidth: 2,
-                states: {
-                    hover: {
-                        lineWidth: 3
-                    }
-                },
-                marker: {
-                    enabled: false
-                },
-                pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(2017, 1, 1, 0, 0, 0)
-            }
-        },
-        yAxis: {
-            title: {
-                text: ''
-            },
-            minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            alternateGridColor: null,
-        },
-        navigation: {
-            menuItemStyle: {
-                fontSize: '10px'
-            }
-        },
-        series: [{
-            name: 'Oil Belgium Spot EUR/Barel',
-            data: [0, 0.6, 0.9, 0.8, 0.2, 0, 0, 0, 0.1, 0.6, 0.7, 0.8, 0.6, 0.2, 0, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }],
-    });
-});
-$(function () {
-    $('#container3').highcharts({
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: 'Gas Belgium Spot EUR/Сubic meter'
-        },
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        tooltip: {
-            valueSuffix: ''
-        },
-        plotOptions: {
-            spline: {
-                lineWidth: 2,
-                states: {
-                    hover: {
-                        lineWidth: 3
-                    }
-                },
-                marker: {
-                    enabled: false
-                },
-                pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(2017, 1, 1, 0, 0, 0)
-            }
-        },
-        yAxis: {
-            title: {
-                text: ''
-            },
-            minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            alternateGridColor: null,
-        },
-        navigation: {
-            menuItemStyle: {
-                fontSize: '10px'
-            }
-        },
-        series: [{
-            name: 'Gas Belgium Spot EUR/Сubic meter',
-            data: [0, 0.6, 0.9, 0.8, 0.2, 0, 0, 0, 0.1, 0.6, 0.7, 0.8, 0.6, 0.2, 0, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }],
-    });
-});
-$(function () {
-    $('#container4').highcharts({
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: 'Gold Belgium Spot EUR/Oz'
-        },
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        tooltip: {
-            valueSuffix: ''
-        },
-        plotOptions: {
-            spline: {
-                lineWidth: 2,
-                states: {
-                    hover: {
-                        lineWidth: 3
-                    }
-                },
-                marker: {
-                    enabled: false
-                },
-                pointInterval: 86400000, // one hour
-                pointStart: Date.UTC(2017, 1, 1, 0, 0, 0)
-            }
-        },
-        yAxis: {
-            title: {
-                text: ''
-            },
-            minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            alternateGridColor: null,
-        },
-        navigation: {
-            menuItemStyle: {
-                fontSize: '10px'
-            }
-        },
-        series: [{
-            name: 'Gold Belgium Spot EUR/Oz',
-            data: [0, 0.6, 0.9, 0.8, 0.2, 0, 0, 0, 0.1, 0.6, 0.7, 0.8, 0.6, 0.2, 0, 0.1, 0.3, 0.3, 0, 0.1, 0, 0, 0, 0.2, 0.1, 0, 0.3, 0, 0.1, 0.2, 0.2, 0.8, 0.8, 0.8, 1, 1.3, 1.5, 2.9, 1.9, 2.6, 1.6, 3, 4, 3.6, 4.5, 4.2, 4.5, 4.5, 4, 3.1, 2.7, 4, 2.7, 2.3, 2.3, 4.1, 7.7, 7.1, 5.6, 6.1, 5.8, 8.6, 7.2, 9, 10.9, 11.5, 11.6, 11.1, 12, 12.3, 10.7, 9.4, 9.8, 9.6, 9.8, 9.5, 8.5, 7.4, 7.6, 0.1, 0.3, 0.3, 0, 3.1, 3.1, 2.5, 1.5, 1.9, 2.1, 1, 2.3, 1.9, 1.2, 0.7, 1.3, 0.4, 0.3]
-        }],
+            name: 'Gasturbine met warmte terugwinning',
+            data: [
+                [Date.UTC(1950,01,01), 0],
+                [Date.UTC(1965,01,01), 0.4],
+                [Date.UTC(1980,01,01), 0.25],
+                [Date.UTC(1983,01,01), 1.66],
+                [Date.UTC(1991,01,01), 1.8],
+                [Date.UTC(1992,01,01), 1.76],
+                [Date.UTC(1994,01,01), 2.62],
+                [Date.UTC(1995,01,01), 2.41],
+                [Date.UTC(1996,01,01), 2.05],
+                [Date.UTC(1997,01,01), 1.7],
+                [Date.UTC(1998,01,01), 1.1],
+                [Date.UTC(1999,01,01), 0],
+                [Date.UTC(2000,01,01), 0],
+                [Date.UTC(2001,01,01), 0.4],
+                [Date.UTC(2002,01,01), 0.25],
+                [Date.UTC(2003,01,01), 1.66],
+                [Date.UTC(2004,01,01), 1.8],
+                [Date.UTC(2005,01,01), 1.76],
+                [Date.UTC(2006,01,01), 2.62],
+                [Date.UTC(2007,01,01), 2.41],
+                [Date.UTC(2008,01,01), 2.05],
+                [Date.UTC(2009,01,01), 1.7],
+                [Date.UTC(2010,01,01), 1.1],
+                [Date.UTC(2011,01,01), 0],
+                [Date.UTC(2012,01,01), 0],
+                [Date.UTC(2013,01,01), 0.25],
+                [Date.UTC(2014,01,01), 1.41],
+                [Date.UTC(2015,01,01), 1.64],
+            ]
+        }]
     });
 });

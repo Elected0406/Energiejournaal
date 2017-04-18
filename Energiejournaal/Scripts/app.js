@@ -1,3 +1,4 @@
+///<script type="text / javascript" src ="js / highcharts.js">
 /// <reference path="typings/jquery/jquery.d.ts" />
 var vwChart = (function () {
     function vwChart(Id, Name, Group, Period, PeriodName) {
@@ -54,7 +55,7 @@ var DataList = (function () {
         var _this = this;
         $.getJSON('http://localhost:4051/Home/GetData' + '?id=' + $('#Chart').val()
             + '&' + 'mindate=' + $('#mindate').val() + '&' + 'maxdate=' + $('#maxdate').val(), function (data) {
-            var select = '<div class="row fpr">' +
+            var select = '<div class="row fpr fmt">' +
                 '<div class="col-sm-6 btn-primary">' + 'ChartName' + '</div>' +
                 '<div class="col-sm-1 btn-primary">' + 'Line' + '</div>' +
                 '<div class="col-sm-2 btn-primary">' + 'LineName' + '</div>' +
@@ -83,5 +84,6 @@ $('#Groups').change(function () { chartsList.UpdateChartList(); });
 var ChartData = new DataList();
 $('#displayBtn').click(function () { ChartData.UpdateChartData(); });
 var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
+var Chartname = 'Chart 2';
 var name = 'Power Belgium Spot EUR/MWh';
 //# sourceMappingURL=app.js.map

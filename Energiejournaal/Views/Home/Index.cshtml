@@ -5,20 +5,14 @@
 <div class="container">
     <div class="ep-decor-module">
         <div class="row">
-            <div class="col-sm-12 col-lg-8">
+            <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-12 col-xl-6 fmt">
+                    <div class="col-sm-6 fmt">
                         <div class="row">
-                            <div class="col-sm-3 fpr">
-                                <button type="submit" class="fp2 btn btn-block time-btns" onclick="alert('1 MONTH')">1 MONTH</button>
-                            </div>
-                            <div class="col-sm-3 fpr">
-                                <button type="submit" class="fp2 btn btn-block time-btns" onclick="alert('6 MONTHS')">6 MONTHS</button>
-                            </div>
-                            <div class="col-sm-3 fpr">
+                            <div class="col-sm-6 fpr">
                                 <button type="submit" class="fp2 btn btn-block time-btns" onclick="alert('1 YEAR')">1 YEAR</button>
                             </div>
-                            <div class="col-sm-3 fpr">
+                            <div class="col-sm-6 fpr">
                                 <button type="submit" class="fp2 btn btn-block time-btns" onclick="alert('All time')">All time</button>
                             </div>
                         </div>
@@ -43,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 col-xl-4 fpr fmt">
+                    <div class="col-sm-3 fpr fmt">
                         <select class="form-control" id="Groups">
                             <option disabled selected>Select Group</option>
                             @foreach (var group in ViewBag.Groups)
@@ -52,7 +46,7 @@
                             }
                         </select>
                     </div>
-                    <div class="col-sm-3 col-xl-4 fpr fmt">
+                    <div class="col-sm-3 fpr fmt">
                         <select class="form-control" id="Chart">
                             <option disabled selected>Select Chart</option>
                             @foreach (var chart in ViewBag.Charts)
@@ -61,8 +55,8 @@
                             }
                         </select>
                     </div>
-                    <div class="col-sm-12 col-xl-4 fpr">
-                        <div type="button" id="displayBtn" class="btn btn-primary btn-block col-sm-12  fmt">Add Data</div>
+                    <div class="col-sm-6 fpr">
+                        <a href="#" id="displayBtn" class="btn btn-primary btn-block col-sm-12 fmt fp2">Add Data</a>
                     </div>
                     <div class="col-sm-12">
                         <div id="Data" class="col-sm-12 col-xl-6 fpr">
@@ -79,31 +73,7 @@
                     <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
                     <div class="col-sm-4"></div>
                 </div>
-            </div>
-            @*<div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container2"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
-                </div>
-            </div>*@
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container3"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 fpr fmt">
-                <div id="container4"></div>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <a href="#" class="btn btn-primary btn-block col-sm-4 fp2">Meer Prijsinfo</a>
-                    <div class="col-sm-4"></div>
-                </div>
-            </div>
+            </div>            
             @*<img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
                 <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />
                 <img src="~/Content/img/graph.png" class="col-sm-12 col-md-6 col-lg-4 fmt" />*@
