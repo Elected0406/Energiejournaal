@@ -12,11 +12,13 @@ namespace Energiejournaal.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class ChartModelEntities : DbContext
+    public partial class EnergyTerminalNEntities : DbContext
     {
-        public ChartModelEntities()
-            : base("name=ChartModelEntities")
+        public EnergyTerminalNEntities()
+            : base("name=EnergyTerminalNEntities")
         {
         }
     
@@ -28,5 +30,15 @@ namespace Energiejournaal.Models
         public virtual DbSet<vwChart> vwCharts { get; set; }
         public virtual DbSet<vwData> vwDatas { get; set; }
         public virtual DbSet<vwGroup> vwGroups { get; set; }
+    
+        [DbFunction("EnergyTerminalNEntities", "fnNewsChart")]
+        public virtual IQueryable<fnNewsChart_Result> fnNewsChart(Nullable<int> market_ID)
+        {
+            var market_IDParameter = market_ID.HasValue ?
+                new ObjectParameter("Market_ID", market_ID) :
+                new ObjectParameter("Market_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fnNewsChart_Result>("[EnergyTerminalNEntities].[fnNewsChart](@Market_ID)", market_IDParameter);
+        }
     }
 }

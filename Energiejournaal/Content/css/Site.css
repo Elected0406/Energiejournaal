@@ -27,9 +27,6 @@ body {
 .fpr {
     padding-right: 0px;
 }
-.fb {
-    border-radius: 0.25rem;
-}
 .ftd {
     padding-right: 15px;
     padding-left: 25px;
@@ -41,11 +38,6 @@ body {
 }
 .form-group {
     margin-bottom: 0;
-}
-.text-right {
-    text-align: right !important;
-    color:#404040;
-    font-size:13px;
 }
 .time-btns {
     font: 600 13px/23px "Open Sans", Arial, Helvetica, sans-serif;
@@ -87,14 +79,6 @@ body {
        text-decoration: none;
        background-color: #666;
 }
-.row-min {
-    margin-left: -10px;
-    margin-right: -10px;
-}
-.select-wrp {
-    padding: 30px 0 20px;
-    min-height: 250px;
-}
 .btn:hover {
 cursor:pointer;
 }
@@ -106,17 +90,6 @@ cursor:pointer;
     background-color: #93B359;
     color: #fff;
     cursor:pointer;
-}
-.btn-secondary {
-    background-color: #2180B4;
-    color: #fff;
-}
-.btn-secondary:hover {
-    background-color: #2180B4;
-    color: #fff;
-}
-.btn-sm {
-    padding: 7px 15px;
 }
 .btn {
     vertical-align: middle;
@@ -131,16 +104,6 @@ cursor:pointer;
     border-radius: 0px;
     border-radius: 3px 3px 0px 0px;
 }
-.option:hover {
-    color: #464a4c;
-    background-color: #C6E2EE;
-    border-color: #464a4c;
-}
-.ergonomy-power-wrapper *, .ergonomy-power-wrapper > :after, .ergonomy-power-wrapper > :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 div {
     margin: 0;
     padding: 0;
@@ -150,25 +113,10 @@ div {
     vertical-align: baseline;
     background: transparent;
 }
-.bootstrap-datetimepicker-widget {
-  top: 0;
-  left: 0;
-  width: 250px;
-  padding: 4px;
-  margin-top: 1px;
-  z-index: 99999 !important;
-  border-radius: 4px;
-}
 .fmt {
 margin-top:10px;
 }
 .fbgw {
   background-color: #fff;
   width: 100%;
-}
-.fbgg {
-  background-color: #464a4c;
-}
-.wrapper-all {
-      background-color: #F6F6F6;
 }

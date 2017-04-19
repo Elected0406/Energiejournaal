@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ChartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EnergyTerminalNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'EnergyTerminalN.Zes.vwChart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwChart">
@@ -58,7 +58,20 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
           <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ChartModelStoreContainer">
+        <Function Name="fnNewsChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="Zes">
+          <Parameter Name="Market_ID" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="Market_ID" Type="int" />
+                <Property Name="Market_Date" Type="smalldatetime" />
+                <Property Name="Market_Value" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="EnergyTerminalNModelStoreContainer">
           <EntitySet Name="vwChart" EntityType="Self.vwChart" store:Type="Views" store:Schema="Zes">
             <DefiningQuery>SELECT 
     [vwChart].[ID] AS [ID], 
@@ -96,7 +109,13 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ChartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EnergyTerminalNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fnNewsChart_Result">
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Market_ID" Type="Int32" />
+          <Property Name="Market_Date" Type="DateTime" />
+          <Property Name="Market_Value" Type="Double" />
+        </ComplexType>
         <EntityType Name="vwChart">
           <Key>
             <PropertyRef Name="ID" />
@@ -144,19 +163,22 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
           <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ChartModelEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EnergyTerminalNEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="vwCharts" EntityType="Self.vwChart" />
           <EntitySet Name="vwDatas" EntityType="Self.vwData" />
           <EntitySet Name="vwGroups" EntityType="Self.vwGroup" />
+          <FunctionImport Name="fnNewsChart" IsComposable="true" ReturnType="Collection(EnergyTerminalNModel.fnNewsChart_Result)">
+            <Parameter Name="Market_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ChartModelStoreContainer" CdmEntityContainer="ChartModelEntities">
+        <EntityContainerMapping StorageEntityContainer="EnergyTerminalNModelStoreContainer" CdmEntityContainer="EnergyTerminalNEntities">
           <EntitySetMapping Name="vwCharts">
-            <EntityTypeMapping TypeName="ChartModel.vwChart">
+            <EntityTypeMapping TypeName="EnergyTerminalNModel.vwChart">
               <MappingFragment StoreEntitySet="vwChart">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -167,7 +189,7 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vwDatas">
-            <EntityTypeMapping TypeName="ChartModel.vwData">
+            <EntityTypeMapping TypeName="EnergyTerminalNModel.vwData">
               <MappingFragment StoreEntitySet="vwData">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Chart" ColumnName="Chart" />
@@ -186,13 +208,23 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vwGroups">
-            <EntityTypeMapping TypeName="ChartModel.vwGroup">
+            <EntityTypeMapping TypeName="EnergyTerminalNModel.vwGroup">
               <MappingFragment StoreEntitySet="vwGroup">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionName="EnergyTerminalNModel.Store.fnNewsChart" FunctionImportName="fnNewsChart">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EnergyTerminalNModel.fnNewsChart_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Market_ID" ColumnName="Market_ID" />
+                <ScalarProperty Name="Market_Date" ColumnName="Market_Date" />
+                <ScalarProperty Name="Market_Value" ColumnName="Market_Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

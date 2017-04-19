@@ -10,7 +10,7 @@ namespace Energiejournaal.Controllers
 {
     public class HomeController : Controller
     {
-        private ChartModelEntities db = new ChartModelEntities();
+        private EnergyTerminalNEntities db = new EnergyTerminalNEntities();
         int selectedIndex = 1;
         public ActionResult Index()
         {
@@ -29,6 +29,21 @@ namespace Energiejournaal.Controllers
             var chartdata = db.vwDatas.Where(p => p.Chart == id).Where(s => s.Date >= mindate).Where(s => s.Date <= maxdate).ToList();
             var chartdatacount = chartdata.Count;
             return Json(chartdata, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetChart99()
+        {
+            var Chart = db.fnNewsChart(99).ToList();
+            return Json(Chart, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetChart101()
+        {
+            var Chart = db.fnNewsChart(101).ToList();
+            return Json(Chart, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetChart995()
+        {
+            var Chart = db.fnNewsChart(995).ToList();
+            return Json(Chart, JsonRequestBehavior.AllowGet);
         }
         public ActionResult About()
         {

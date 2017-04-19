@@ -244,6 +244,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChartModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\fnNewsChart_Result.cs">
+      <DependentUpon>ChartModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\User.cs" />
@@ -291,6 +294,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Models\ChartModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ChartModel.edmx</DependentUpon>
@@ -300,17 +307,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ChartModel.edmx</DependentUpon>
       <LastGenOutput>ChartModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="Models\ChartModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ChartModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ChartModel.edmx.diagram">
-      <DependentUpon>ChartModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -371,6 +367,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\app.js.map" />
+    <EntityDeploy Include="Models\ChartModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ChartModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ChartModel.edmx.diagram">
+      <DependentUpon>ChartModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\_references.js" />
