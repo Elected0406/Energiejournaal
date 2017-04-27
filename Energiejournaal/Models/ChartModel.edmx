@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EnergyTerminalNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EnergyTerminalNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'EnergyTerminalN.Zes.vwChart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwChart">
@@ -58,6 +58,16 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
           <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <Function Name="CheckValidKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="Zes">
+          <Parameter Name="Key" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ValidKey" Type="bit" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="fnNewsChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="Zes">
           <Parameter Name="Market_ID" Type="int" Mode="In" />
           <ReturnType>
@@ -105,8 +115,7 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
     FROM [Zes].[vwGroup] AS [vwGroup]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EnergyTerminalNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -168,7 +177,10 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
           <EntitySet Name="vwDatas" EntityType="Self.vwData" />
           <EntitySet Name="vwGroups" EntityType="Self.vwGroup" />
           <FunctionImport Name="fnNewsChart" IsComposable="true" ReturnType="Collection(EnergyTerminalNModel.fnNewsChart_Result)">
-            <Parameter Name="Market_ID" Mode="In" Type="Int32" />
+          <Parameter Name="Market_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CheckValidKey" IsComposable="true" ReturnType="Collection(Boolean)">
+            <Parameter Name="Key" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
       </Schema>
@@ -225,6 +237,7 @@ warning 6002: The table/view 'EnergyTerminalN.Zes.vwGroup' does not have a prima
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CheckValidKey" FunctionName="EnergyTerminalNModel.Store.CheckValidKey" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

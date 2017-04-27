@@ -386,6 +386,13 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-modules-boost.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-modules-exporting.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-modules-no-data-to-display.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-modules-offline-exporting.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts-more.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highcharts.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\highcharts\highstock.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>

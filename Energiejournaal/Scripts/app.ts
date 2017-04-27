@@ -111,70 +111,70 @@ class fnChart implements IfnChart {
         public Market_Date: string,
         public Market_Value: number) { }
 }
-class fnChart99 {
-    public fnChart99Data: Array<fnChart> = new Array<fnChart>();
-    LoadfnChart99Data(): void {
-        $.getJSON('http://localhost:4051/Home/GetChart99',
-            (data) => {
-                var select = '<div class="row fpr">';
-                for (var i = 0; i < data.length; i++) {
-                    this.fnChart99Data = data
-                    var selectRow =
-                        '<div class="col-sm-7">' + this.fnChart99Data[i].Market_Date + '</div>' +
-                        '<div class="col-sm-4">' + this.fnChart99Data[i].Market_Value + '</div>';
-                    select += selectRow;
-                }   
-                select += '</div>';   
-                $("#datar1").html(select);
-                });
-}
-}
-class fnChart101 {
-    public fnChart101Data: Array<fnChart> = new Array<fnChart>();
-    LoadfnChart101Data(): void {
-        $.getJSON('http://localhost:4051/Home/GetChart101',
-            (data) => {
-                var select = '<div class="row fpr">';
-                for (var i = 0; i < data.length; i++) {
-                    this.fnChart101Data = data
-                    var selectRow =
-                        '<div class="col-sm-7">' + this.fnChart101Data[i].Market_Date + '</div>' +
-                        '<div class="col-sm-4">' + this.fnChart101Data[i].Market_Value + '</div>';
-                    select += selectRow;
-                }
-                select += '</div>';
-                $("#datar2").html(select);
-            });
-    }
-}
-class fnChart995 {
-    public fnChart995Data: Array<fnChart> = new Array<fnChart>();
-    LoadfnChart995Data(): void {
-        $.getJSON('http://localhost:4051/Home/GetChart995',
-            (data) => {
-                var select = '[';
-                for (var i = 0; i < data.length; i++) {
-                    this.fnChart995Data = data
-                    var selectRow =                       
-                         this.fnChart995Data[i].Market_Value + ',' ;
-                    select += selectRow;
-                }
-                select += '0]';
-                return select;
-            });
-    }
-}
+//class fnChart99 {
+//    public fnChart99Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart99Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart99',
+//            (data) => {
+//                var select = '<div class="row fpr">';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart99Data = data
+//                    var selectRow =
+//                        '<div class="col-sm-7">' + this.fnChart99Data[i].Market_Date + '</div>' +
+//                        '<div class="col-sm-4">' + this.fnChart99Data[i].Market_Value + '</div>';
+//                    select += selectRow;
+//                }   
+//                select += '</div>';   
+//                $("#datar1").html(select);
+//                });
+//}
+//}
+//class fnChart101 {
+//    public fnChart101Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart101Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart101',
+//            (data) => {
+//                var select = '<div class="row fpr">';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart101Data = data
+//                    var selectRow =
+//                        '<div class="col-sm-7">' + this.fnChart101Data[i].Market_Date + '</div>' +
+//                        '<div class="col-sm-4">' + this.fnChart101Data[i].Market_Value + '</div>';
+//                    select += selectRow;
+//                }
+//                select += '</div>';
+//                $("#datar2").html(select);
+//            });
+//    }
+//}
+//class fnChart995 {
+//    public fnChart995Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart995Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart995',
+//            (data) => {
+//                var select = '[';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart995Data = data
+//                    var selectRow =                       
+//                         this.fnChart995Data[i].Market_Value + ',' ;
+//                    select += selectRow;
+//                }
+//                select += '0]';
+//                return select;
+//            });
+//    }
+//}
 
 var chartsList: ChartsList = new ChartsList();
 $('#Groups').change(function () { chartsList.UpdateChartList(); });
 var ChartData: DataList = new DataList();
 $('#displayBtn').click(function () { ChartData.UpdateChartData(); });
-var fnChart99Data: fnChart99 = new fnChart99();
-fnChart99Data.LoadfnChart99Data(); 
-var fnChart101Data: fnChart101 = new fnChart101();
-fnChart101Data.LoadfnChart101Data(); 
-var fnChart995Data: fnChart995 = new fnChart995();
-fnChart995Data.LoadfnChart995Data();
+//var fnChart99Data: fnChart99 = new fnChart99();
+//fnChart99Data.LoadfnChart99Data(); 
+//var fnChart101Data: fnChart101 = new fnChart101();
+//fnChart101Data.LoadfnChart101Data(); 
+//var fnChart995Data: fnChart995 = new fnChart995();
+//fnChart995Data.LoadfnChart995Data();
 
 
 

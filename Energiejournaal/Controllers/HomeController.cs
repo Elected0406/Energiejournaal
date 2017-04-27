@@ -14,9 +14,20 @@ namespace Energiejournaal.Controllers
         int selectedIndex = 1;
         public ActionResult Index()
         {
-            ViewBag.Groups = db.vwGroups.ToList();
-            ViewBag.Charts = db.vwCharts.Where(c => c.ID == selectedIndex).ToList();
-            return View();
+            //var cookie = Request.Cookies["energiejournaal"];
+            //if (cookie != null)
+            //{
+            //    var value = cookie.Value;
+            //    var bul = db.CheckValidKey(value).FirstOrDefault().ToString();
+            //    if (bul == "1")
+            //    {
+                    ViewBag.Groups = db.vwGroups.ToList();
+                    ViewBag.Charts = db.vwCharts.Where(c => c.ID == selectedIndex).ToList();
+                    return View();
+            //    }
+            //    else return RedirectToRoute("google.ru");
+            //}
+            //else return RedirectToRoute("google.ru");
         }
         public JsonResult GetCharts(int id)
         {

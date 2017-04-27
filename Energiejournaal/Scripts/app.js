@@ -88,75 +88,69 @@ var fnChart = (function () {
     }
     return fnChart;
 }());
-var fnChart99 = (function () {
-    function fnChart99() {
-        this.fnChart99Data = new Array();
-    }
-    fnChart99.prototype.LoadfnChart99Data = function () {
-        var _this = this;
-        $.getJSON('http://localhost:4051/Home/GetChart99', function (data) {
-            var select = '<div class="row fpr">';
-            for (var i = 0; i < data.length; i++) {
-                _this.fnChart99Data = data;
-                var selectRow = '<div class="col-sm-7">' + _this.fnChart99Data[i].Market_Date + '</div>' +
-                    '<div class="col-sm-4">' + _this.fnChart99Data[i].Market_Value + '</div>';
-                select += selectRow;
-            }
-            select += '</div>';
-            $("#datar1").html(select);
-        });
-    };
-    return fnChart99;
-}());
-var fnChart101 = (function () {
-    function fnChart101() {
-        this.fnChart101Data = new Array();
-    }
-    fnChart101.prototype.LoadfnChart101Data = function () {
-        var _this = this;
-        $.getJSON('http://localhost:4051/Home/GetChart101', function (data) {
-            var select = '<div class="row fpr">';
-            for (var i = 0; i < data.length; i++) {
-                _this.fnChart101Data = data;
-                var selectRow = '<div class="col-sm-7">' + _this.fnChart101Data[i].Market_Date + '</div>' +
-                    '<div class="col-sm-4">' + _this.fnChart101Data[i].Market_Value + '</div>';
-                select += selectRow;
-            }
-            select += '</div>';
-            $("#datar2").html(select);
-        });
-    };
-    return fnChart101;
-}());
-var fnChart995 = (function () {
-    function fnChart995() {
-        this.fnChart995Data = new Array();
-    }
-    fnChart995.prototype.LoadfnChart995Data = function () {
-        var _this = this;
-        $.getJSON('http://localhost:4051/Home/GetChart995', function (data) {
-            var select = '[';
-            for (var i = 0; i < data.length; i++) {
-                _this.fnChart995Data = data;
-                var selectRow = _this.fnChart995Data[i].Market_Value + ',';
-                select += selectRow;
-            }
-            select += '0]';
-            return select;
-        });
-    };
-    return fnChart995;
-}());
+//class fnChart99 {
+//    public fnChart99Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart99Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart99',
+//            (data) => {
+//                var select = '<div class="row fpr">';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart99Data = data
+//                    var selectRow =
+//                        '<div class="col-sm-7">' + this.fnChart99Data[i].Market_Date + '</div>' +
+//                        '<div class="col-sm-4">' + this.fnChart99Data[i].Market_Value + '</div>';
+//                    select += selectRow;
+//                }   
+//                select += '</div>';   
+//                $("#datar1").html(select);
+//                });
+//}
+//}
+//class fnChart101 {
+//    public fnChart101Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart101Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart101',
+//            (data) => {
+//                var select = '<div class="row fpr">';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart101Data = data
+//                    var selectRow =
+//                        '<div class="col-sm-7">' + this.fnChart101Data[i].Market_Date + '</div>' +
+//                        '<div class="col-sm-4">' + this.fnChart101Data[i].Market_Value + '</div>';
+//                    select += selectRow;
+//                }
+//                select += '</div>';
+//                $("#datar2").html(select);
+//            });
+//    }
+//}
+//class fnChart995 {
+//    public fnChart995Data: Array<fnChart> = new Array<fnChart>();
+//    LoadfnChart995Data(): void {
+//        $.getJSON('http://localhost:4051/Home/GetChart995',
+//            (data) => {
+//                var select = '[';
+//                for (var i = 0; i < data.length; i++) {
+//                    this.fnChart995Data = data
+//                    var selectRow =                       
+//                         this.fnChart995Data[i].Market_Value + ',' ;
+//                    select += selectRow;
+//                }
+//                select += '0]';
+//                return select;
+//            });
+//    }
+//}
 var chartsList = new ChartsList();
 $('#Groups').change(function () { chartsList.UpdateChartList(); });
 var ChartData = new DataList();
 $('#displayBtn').click(function () { ChartData.UpdateChartData(); });
-var fnChart99Data = new fnChart99();
-fnChart99Data.LoadfnChart99Data();
-var fnChart101Data = new fnChart101();
-fnChart101Data.LoadfnChart101Data();
-var fnChart995Data = new fnChart995();
-fnChart995Data.LoadfnChart995Data();
+//var fnChart99Data: fnChart99 = new fnChart99();
+//fnChart99Data.LoadfnChart99Data(); 
+//var fnChart101Data: fnChart101 = new fnChart101();
+//fnChart101Data.LoadfnChart101Data(); 
+//var fnChart995Data: fnChart995 = new fnChart995();
+//fnChart995Data.LoadfnChart995Data();
 var temperatures = [7, 1.7, 1.3, 1.3, 1.2, 0.9, 0.6, 0.6, 0.6, 1.2, 3.3, 6.6, 8.7, 10.5];
 var Chartname = 'Chart 2';
 var name = 'Power Belgium Spot EUR/MWh';
