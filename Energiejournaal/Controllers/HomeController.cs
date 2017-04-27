@@ -30,33 +30,5 @@ namespace Energiejournaal.Controllers
             var chartdatacount = chartdata.Count;
             return Json(chartdata, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetChart99()
-        {
-            var Chart = db.fnNewsChart(99).ToList();
-            return Json(Chart, JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult GetChart101()
-        {
-            var Chart = db.fnNewsChart(101).ToList();
-            return Json(Chart, JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult GetChart995()
-        {
-            var Chart = db.fnNewsChart(995).ToList();
-            return Json(Chart, JsonRequestBehavior.AllowGet);
-        }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

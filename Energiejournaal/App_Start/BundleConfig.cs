@@ -24,11 +24,10 @@ namespace Energiejournaal
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/Moment.js",
-                      "~/Scripts/app.js",
                       "~/Scripts/daterangepicker.js",
                       "~/Scripts/bootstrap-datetimepicker.js",
                       "~/Scripts/highcharts.js",
-                      "~/Scripts/highchartsdata.js",
+                      "~/Scripts/datetimedata.js",
                       "~/Scripts/simple-tabs.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
